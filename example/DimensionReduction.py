@@ -22,3 +22,7 @@ newdata = iris.data
 # transform new data using already fitted pca
 # (don't re-fit the pca)
 
+newdata_transformed = pca.transform(newdata)
+
+# predict labels using the trained classifier
+pred_labels = classifier.predict(newdata_transformed)
