@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # import os
 
 # from random import random, randint
@@ -10,3 +11,6 @@ mlflow.start_run()
 mlflow.log_param("my", "param")
 mlflow.log_metric("score", 100)
 mlflow.end_run()
+=======
+print("Testing")
+>>>>>>> a4373aa ([Update] - Added new file)
