@@ -41,6 +41,8 @@ d = np.concatenate((X, Y), axis=1)
 cols = diabetes.feature_names + ["progression"]
 data = pd.DataFrame(d, columns=cols)
 
+print("Data Head -> {0}".format(data.head()))
+
 
 # Import mlflow
 import mlflow
