@@ -17,7 +17,7 @@ train, test = train_test_split(dataset)
 # print("{0}".format(train[["293"]]))
 
 
-# The predicted column is "293" which is
+# The predicted column is "293" which is a scalar from [3, 9]
 train_x = train.drop(["293"], axis=1)
 test_x = test.drop(["293"], axis=1)
 train_y = train[["293"]]
