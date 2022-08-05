@@ -6,6 +6,9 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 
+import mlflow
+import mlflow.sklearn
+
 
 # Evaluate metrics
 def eval_metrics(actual, pred):
@@ -43,6 +46,8 @@ print("Train X -> {0}".format(train_x))
 alpha = float(sys.argv[1]) if len(sys.argv) > 1 else 0.5
 l1_ratio = float(sys.argv[2]) if len(sys.argv) > 2 else 0.5
 
+
+# Run ElasticNet
 lr = ElasticNet(alpha=alpha, l1_ratio=l1_ratio, random_state=42)
 lr.fit(train_x, train_y)
 
@@ -51,8 +56,11 @@ print(predicted_qualities)
 
 (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
 
+# Print out ElasticNet Model Metrics
 print("Elasticnet Model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
 print("  RMSE: %s" % rmse)
 print("  MAE: %s" % mae)
 print("  R2: %s" % r2)
 
+# Log mlflow attributes for mlflow UI
+mlflow.log_param("alpha", alpha)
