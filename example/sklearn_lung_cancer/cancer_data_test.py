@@ -4,7 +4,6 @@ import pandas as pd
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 
-# dataset = pd.read_csv(r"/mnt/e/MLOps/new_sklearn/Scikit-Learn-Study_MLOps/example/sklearn_lung_cancer/ThoraricSurgery.csv")
 # Import csv files from `public/csv/` file-directory
 # dataset = pd.read_csv("../public/csv/ThoraricSurgery.csv", sep=';')
 dataset = pd.read_csv("../public/csv/ThoraricSurgery.csv")
