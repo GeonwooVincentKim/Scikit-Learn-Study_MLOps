@@ -6,8 +6,8 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 
-import mlflow
-import mlflow.sklearn
+# import mlflow
+# import mlflow.sklearn
 
 
 # Evaluate metrics
@@ -54,13 +54,15 @@ lr.fit(train_x, train_y)
 predicted_qualities = lr.predict(test_x)
 print(predicted_qualities)
 
-(rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
+# (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
 
-# Print out ElasticNet Model Metrics
-print("Elasticnet Model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
-print("  RMSE: %s" % rmse)
-print("  MAE: %s" % mae)
-print("  R2: %s" % r2)
+# # Print out ElasticNet Model Metrics
+# print("Elasticnet Model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
+# print("  RMSE: %s" % rmse)
+# print("  MAE: %s" % mae)
+# print("  R2: %s" % r2)
 
-# Log mlflow attributes for mlflow UI
-mlflow.log_param("alpha", alpha)
+# # Log mlflow attributes for mlflow UI
+# mlflow.log_param("alpha", alpha)
+# mlflow.log_param("l1_ratio", l1_ratio)
+# mlflow.log_metric("rmse", rmse)
