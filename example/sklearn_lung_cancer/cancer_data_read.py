@@ -54,13 +54,13 @@ lr.fit(train_x, train_y)
 predicted_qualities = lr.predict(test_x)
 print(predicted_qualities)
 
-# (rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
+(rmse, mae, r2) = eval_metrics(test_y, predicted_qualities)
 
 # # Print out ElasticNet Model Metrics
-# print("Elasticnet Model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
-# print("  RMSE: %s" % rmse)
-# print("  MAE: %s" % mae)
-# print("  R2: %s" % r2)
+print("Elasticnet Model (alpha=%f, l1_ratio=%f):" % (alpha, l1_ratio))
+print("  RMSE: %s" % rmse)
+print("  MAE: %s" % mae)
+print("  R2: %s" % r2)
 
 # # Log mlflow attributes for mlflow UI
 # mlflow.log_param("alpha", alpha)
