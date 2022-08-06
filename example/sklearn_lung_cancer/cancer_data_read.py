@@ -6,8 +6,10 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 
+from urllib.parse import urlparse
+
 import mlflow
-# import mlflow.sklearn
+import mlflow.sklearn
 
 
 # Evaluate metrics
@@ -66,3 +68,14 @@ print("  R2: %s" % r2)
 mlflow.log_param("alpha", alpha)
 mlflow.log_param("l1_ratio", l1_ratio)
 mlflow.log_metric("rmse", rmse)
+mlflow.log_metric("r2", r2)
+mlflow.log_metric("mae", mae)
+# mlflow.sklearn.log_model(lr, "model")
+
+tracking_url_type_store = urlparse(mlflow.get_tracking_uri()).scheme
+
+if tracking_url_type_store != "file":
+	mlflow.sklearn.log_model(lr, "model", registered_model_name="LungCancerModel")
+
+else:
+	mlflow.sklearn.log_model(lr, "model")
