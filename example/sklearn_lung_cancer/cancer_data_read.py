@@ -6,7 +6,7 @@ from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 from sklearn.model_selection import train_test_split
 from sklearn.linear_model import ElasticNet
 
-# import mlflow
+import mlflow
 # import mlflow.sklearn
 
 
@@ -63,6 +63,6 @@ print("  MAE: %s" % mae)
 print("  R2: %s" % r2)
 
 # # Log mlflow attributes for mlflow UI
-# mlflow.log_param("alpha", alpha)
-# mlflow.log_param("l1_ratio", l1_ratio)
-# mlflow.log_metric("rmse", rmse)
+mlflow.log_param("alpha", alpha)
+mlflow.log_param("l1_ratio", l1_ratio)
+mlflow.log_metric("rmse", rmse)
